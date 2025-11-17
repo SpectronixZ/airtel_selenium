@@ -1,0 +1,41 @@
+plugins {
+    id 'java'
+}
+
+group 'com.example'
+version '1.0-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Selenium
+    implementation 'org.seleniumhq.selenium:selenium-java:4.25.0'
+
+    // WebDriverManager
+    implementation 'io.github.bonigarcia:webdrivermanager:5.9.2'
+
+    // TestNG
+    testImplementation 'org.testng:testng:7.10.2'
+
+    //
+    implementation 'org.slf4j:slf4j-simple:2.0.9'
+
+    implementation 'com.aventstack:extentreports:5.1.1'
+
+    implementation 'commons-io:commons-io:2.11.0'
+
+}
+
+test {
+    useTestNG()
+    testLogging.showStandardStreams = true
+}
